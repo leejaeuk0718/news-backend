@@ -24,7 +24,7 @@ public class User extends BaseTimeEntity{
     @Column(name = "user_id")
     private Long id;
 
-    @OneToMany(mappedBy = "user_id",cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Favorite> favorites = new ArrayList<>();
 
     @Column(name = "name", nullable = false)

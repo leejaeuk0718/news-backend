@@ -12,7 +12,7 @@ import java.util.List;
 public interface SearchHistoryRepository extends JpaRepository<SearchHistory, Integer> {
     List<SearchHistory> findByUserOrderByCreatedDateAsc(User user);
 
-    List<SearchHistory> findUserAndQuery(User user);
+    List<SearchHistory> findByUserAndQuery(User user, String query);
 
     Page<SearchHistory> findByUserOrderByCreatedDateDesc(User user, PageRequest pageRequest);
 }

@@ -23,7 +23,7 @@ public class News {
     @Column(name = "news_id")
     private Long id;
 
-    @OneToMany(mappedBy = "news_id",cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "news",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Favorite>  favorites = new ArrayList<>();
 
     @Column(name = "title", nullable = false)

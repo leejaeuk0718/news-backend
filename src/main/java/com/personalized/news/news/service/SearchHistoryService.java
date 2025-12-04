@@ -46,7 +46,8 @@ public class SearchHistoryService {
     public void deleteSearchHistory(Long userId, String query){
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new UserNotFoundException(userId));
-        List<SearchHistory> searchHistory = searchHistoryRepository.findUserAndQuery(user);
+
+        List<SearchHistory> searchHistory = searchHistoryRepository.findByUserAndQuery(user, query);
         searchHistoryRepository.deleteAll(searchHistory);
     }
 
